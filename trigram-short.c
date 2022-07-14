@@ -3,6 +3,7 @@
 //  cc -Wall -Wextra -fPIC -shared -Ipath/to/sqlite3/ ftstri.c ftstri.so
 //  sqlite3 << EOF
 //  .load ./trigram-short.so
+//  CREATE VIRTUAL TABLE t_fts USING fts5(..., tokenize="tshort",... );
 //
 //  select rowid from fts('query');
 //  .quit
@@ -96,7 +97,7 @@ static int ftsTriInstall(sqlite3 *db){
   pApi = fts5_api_from_db(db);
   if( pApi==0 ) return 0;
 
-  return pApi->xCreateTokenizer(pApi, "trigramshort", 0, &tok, 0);
+  return pApi->xCreateTokenizer(pApi, "tshort", 0, &tok, 0);
 }
 
 #ifdef _WIN32
