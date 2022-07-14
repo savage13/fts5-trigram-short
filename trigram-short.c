@@ -2,14 +2,14 @@
 // Compile:
 //  cc -Wall -Wextra -fPIC -shared -Ipath/to/sqlite3/ ftstri.c ftstri.so
 //  sqlite3 << EOF
-//  .load ./ftstri.so
+//  .load ./trigram-short.so
 //
 //  select rowid from fts('query');
 //  .quit
 //  EOF
 //
 //  better-sqlite3 (via node)
-//  db.loadExtension('./ftstri.so');
+//  db.loadExtension('./trigram-short.so');
 //
 #include "sqlite3ext.h"
 SQLITE_EXTENSION_INIT1
@@ -96,7 +96,7 @@ static int ftsTriInstall(sqlite3 *db){
   pApi = fts5_api_from_db(db);
   if( pApi==0 ) return 0;
 
-  return pApi->xCreateTokenizer(pApi, "tri", 0, &tok, 0);
+  return pApi->xCreateTokenizer(pApi, "trigram-short", 0, &tok, 0);
 }
 
 #ifdef _WIN32

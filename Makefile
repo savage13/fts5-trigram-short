@@ -8,8 +8,8 @@ SQLITE_PATH=../../node_modules/better-sqlite3/deps/sqlite3
 CFLAGS=-Wall -Wextra \
 	-shared -fPIC \
 	-I$(SQLITE_PATH)
-OBJ=ftstri.so
-SRC=ftstri.c
+OBJ=trigram-short.so
+SRC=trigram-short.c
 
 all: $(OBJ)
 
