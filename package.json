@@ -1,10 +1,10 @@
 {
-  "name": "ftstri",
+  "name": "trigram-short",
   "version": "1.0.0",
   "description": "Trigram tokenizer supporting less than 3 characters",
   "main": "index.js",
   "scripts": {
-      "install": "npm root better-sqlite3 && make all ",
+      "install": "make all ",
       "clean": "make clean"
   },
   "author": "",
