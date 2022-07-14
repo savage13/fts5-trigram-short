@@ -102,7 +102,7 @@ static int ftsTriInstall(sqlite3 *db){
 #ifdef _WIN32
 __declspec(dllexport)
 #endif
-int sqlite3_ftstri_init(
+int sqlite3_trigramshort_init(
   sqlite3 *db,
   char **pzErrMsg,
   const sqlite3_api_routines *pApi
