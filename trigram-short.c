@@ -96,7 +96,7 @@ static int ftsTriInstall(sqlite3 *db){
   pApi = fts5_api_from_db(db);
   if( pApi==0 ) return 0;
 
-  return pApi->xCreateTokenizer(pApi, "trigram-short", 0, &tok, 0);
+  return pApi->xCreateTokenizer(pApi, "trigramshort", 0, &tok, 0);
 }
 
 #ifdef _WIN32
